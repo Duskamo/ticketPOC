@@ -1,0 +1,37 @@
+1524590717595	geckodriver	INFO	geckodriver 0.19.1
+1524590717598	geckodriver	INFO	Listening on 127.0.0.1:47376
+1524590718725	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-profile" "/tmp/rust_mozprofile.4nwgWyTyZ6OW"
+*** You are running in headless mode.
+1524590719156	Marionette	INFO	Enabled via --marionette
+1524590720634	Marionette	INFO	Listening on port 46661
+1524590720734	Marionette	WARN	TLS certificate errors will be ignored for this session
+1524592000546	geckodriver	INFO	geckodriver 0.19.1
+1524592000551	geckodriver	INFO	Listening on 127.0.0.1:37826
+1524592001677	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-profile" "/tmp/rust_mozprofile.Tu8op2b6XLIT"
+*** You are running in headless mode.
+1524592002110	Marionette	INFO	Enabled via --marionette
+1524592003610	Marionette	INFO	Listening on port 42742
+1524592003688	Marionette	WARN	TLS certificate errors will be ignored for this session
+1524592810359	geckodriver	INFO	geckodriver 0.19.1
+1524592810362	geckodriver	INFO	Listening on 127.0.0.1:38949
+1524592811482	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-profile" "/tmp/rust_mozprofile.hvZyJBhs2Qqs"
+*** You are running in headless mode.
+1524592811912	Marionette	INFO	Enabled via --marionette
+1524592813584	Marionette	INFO	Listening on port 46722
+1524592813654	Marionette	WARN	TLS certificate errors will be ignored for this session
+1524592925877	geckodriver	INFO	geckodriver 0.19.1
+1524592925889	geckodriver	INFO	Listening on 127.0.0.1:38977
+1524592927045	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-profile" "/tmp/rust_mozprofile.eyFrY7yUaq9Y"
+*** You are running in headless mode.
+1524592928832	Marionette	INFO	Enabled via --marionette
+1524593119336	geckodriver	INFO	geckodriver 0.19.1
+1524593119342	geckodriver	INFO	Listening on 127.0.0.1:56603
+1524593120479	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "--headless" "-profile" "/tmp/rust_mozprofile.rIYxwrSYd6yk"
+*** You are running in headless mode.
+1524593121168	Marionette	INFO	Enabled via --marionette
+1524593122830	Marionette	INFO	Listening on port 37151
+1524593122890	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 23654, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-BgGWsI/firefox-59.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 23616, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /build/firefox-BgGWsI/firefox-59.0.2+build1/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
