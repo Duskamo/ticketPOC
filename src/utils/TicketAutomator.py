@@ -18,3 +18,8 @@ class TicketAutomator:
 		
 		breadCrumbTicketInfoBasePage = breadCrumbHomeBasePage.gotoTicketInfoBasePage(template_url)
 		breadCrumbTicketInfoBasePage.gatherTicketInformation()
+
+		self.tickets = breadCrumbTicketInfoBasePage.getTicketsAndTotals()
+
+	def getTicketsAndTotals(self):
+		return self.tickets

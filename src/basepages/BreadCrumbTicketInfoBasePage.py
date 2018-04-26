@@ -1,7 +1,6 @@
 
 import time
-import urllib2
-from bs4 import BeautifulSoup
+from src.utils.TableParseHelper import *
 
 class BreadCrumbTicketInfoBasePage:
 	def __init__(self):
@@ -10,27 +9,27 @@ class BreadCrumbTicketInfoBasePage:
 	def gatherTicketInformation(self):
 		print("URL: " + self.driver.current_url)
 		
-		time.sleep(20)	
+		# Wait for data to load and calculate number of groups (by date) in the table
+		time.sleep(10)	
 		b = self.driver.find_element_by_id("checks-list")
 		dateRows = self.driver.find_elements_by_xpath(".//*[@id='checks-list']//tbody/tr")
-
 		dateRowCount = len(dateRows)
-			
-		page = urllib2.urlopen(self.driver.current_url)
-		soup = BeautifulSoup(page, 'html.parser')
 
-		for tr in soup.find_all('tr')[2:]:
-			tds = tr.find_all('td')
-			print(tds[0].text)
-			print(tds[1].text)
-			print(tds[2].text)
+		# Parse daily totals and individual ticket information
+		self.tableParseHelper = TableParseHelper(self.driver)
+		self.tableParseHelper.parseTotals()
 
-		"""
 		for rowId in range(dateRowCount):
-			current_row = self.driver.find_element_by_xpath(".//*[@id='checks-list']//tbody/tr[{0}]".format(rowId+1))
-			#current_row.click()
-		"""
-			
+			self.tableParseHelper.rowId = rowId + 1
+			self.tableParseHelper.clickrow("collapsed")
+			self.tableParseHelper.parseTickets()
+			self.tableParseHelper.clickrow("expanded")
+
+	def getTicketsAndTotals(self):
+		return self.tableParseHelper.getTicketsAndTotals()
+
+
+					
 
 			
 			

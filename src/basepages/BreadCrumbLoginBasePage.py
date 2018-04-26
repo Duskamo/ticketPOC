@@ -9,7 +9,7 @@ class BreadCrumbLoginBasePage:
 
 	def open(self, base_url):
 		firefoxOptions = Options()
-        	firefoxOptions.add_argument("--headless")
+        	#firefoxOptions.add_argument("--headless")
         	self.driver = webdriver.Firefox(options=firefoxOptions,executable_path='/usr/local/bin/geckodriver')
         	self.driver.maximize_window()
 	        self.driver.get(base_url)
