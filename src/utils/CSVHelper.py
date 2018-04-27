@@ -2,11 +2,12 @@
 import csv
 
 class CSVHelper:
-	def __init__(self,ticketTotals):
+	def __init__(self,ticketTotals,restaurant):
 		self.ticketTotals = ticketTotals
+		self.restaurant = restaurant
 
-	def writeToFile(self,outputFile):	
-		with open(outputFile, 'wb') as csvfile:
+	def writeToFile(self,exportDirectory):	
+		with open("{0}{1}_ticket_info.csv".format(exportDirectory,self.restaurant), 'wb') as csvfile:
 			ticketwriter = csv.writer(csvfile, delimiter=',')
 
 			for ticketAndTotal in self.ticketTotals:
@@ -30,7 +31,8 @@ class CSVHelper:
 
 				for ticket in ticketAndTotal.tickets:
 					# Write individual ticket information
-					ticketwriter.writerow([ticket.ticketNumber,
+					ticketwriter.writerow([ticket.url,
+							ticket.ticketNumber,
 							str(ticket.name),
 							ticket.server,
 							ticket.time,

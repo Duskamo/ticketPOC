@@ -63,6 +63,8 @@ class TableParseHelper:
 		self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
 		for index, tr in enumerate(self.soup.find_all('tr', {"class": "check clickable"})):
+			# Scrape unique ticket URL
+			ticketUrl = self.extractTicketUrl(tr['data-href'])
 
 			# Scrape all daily total ticket information
 			tdss = tr.find_all('td')						
@@ -76,7 +78,8 @@ class TableParseHelper:
 			# Add information to TicketTotal model
 			self.ticketTotals[self.rowId].tickets.append(Ticket())
 
-			if len(tds) > 0:		
+			if len(tds) > 0:
+				self.ticketTotals[self.rowId].tickets[index].url = ticketUrl		
 				self.ticketTotals[self.rowId].tickets[index].ticketNumber = tds[1].strip()
 				self.ticketTotals[self.rowId].tickets[index].name = tds[2].strip()
 				self.ticketTotals[self.rowId].tickets[index].server = tds[3].strip()
@@ -87,7 +90,7 @@ class TableParseHelper:
 				self.ticketTotals[self.rowId].tickets[index].netsales = tds[8].strip()
 				self.ticketTotals[self.rowId].tickets[index].autograt = tds[9].strip()
 				self.ticketTotals[self.rowId].tickets[index].tax = tds[10].strip()
-				self.ticketTotals[self.rowId].tickets[index].bill = tds[11].strip()
+				self.ticketTotals[self.rowId].tickets[index].bill = tds[11].strip()	
 				self.ticketTotals[self.rowId].tickets[index].payment = tds[12].strip()
 				self.ticketTotals[self.rowId].tickets[index].tips = tds[13].strip()
 				self.ticketTotals[self.rowId].tickets[index].cash = tds[14].strip()
@@ -97,3 +100,7 @@ class TableParseHelper:
 
 	def getTicketsAndTotals(self):
 		return self.ticketTotals
+
+	# Private Methods
+	def extractTicketUrl(self, fullUrl):
+		return fullUrl[44:]

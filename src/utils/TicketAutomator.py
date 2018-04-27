@@ -21,5 +21,9 @@ class TicketAutomator:
 
 		self.tickets = breadCrumbTicketInfoBasePage.getTicketsAndTotals()
 
+		#self.driver = breadCrumbTicketInfoBasePage.driver
+		#self.driver.close()
+
 	def getTicketsAndTotals(self):
 		return self.tickets
+

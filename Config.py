@@ -7,7 +7,8 @@ password="laborer097643jellyfish124356treatment"
 startDate="04-20-2018"
 endDate="04-22-2018"
 
+restaurants = ["the-blaguard"]
 base_url="https://hq.breadcrumb.com"
 template_url="https://reports.breadcrumb.com/hq/restaurants/the-blaguard/reports/checks?startDate={0}&endDate={1}".format(startDate,endDate)
 
-exportFile = "./output/resturant_ticket_info.csv"
+exportDirectory = "./output/"

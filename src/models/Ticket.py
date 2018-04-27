@@ -2,7 +2,7 @@
 
 class Ticket:
 	def __init__(self):
-		self.id = ""
+		self.url = ""
 		self.ticketNumber = ""
 		self.name = ""
 		self.server = ""

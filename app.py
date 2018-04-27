@@ -9,7 +9,7 @@ ticketAutomator.automate()
 
 ticketTotals = ticketAutomator.getTicketsAndTotals()
 
-csvHelper = CSVHelper(ticketTotals)
-csvHelper.writeToFile(exportFile)
+csvHelper = CSVHelper(ticketTotals,restaurants[0])
+csvHelper.writeToFile(exportDirectory)
 
 
